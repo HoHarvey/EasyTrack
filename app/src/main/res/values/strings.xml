@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">EasyTrack</string>
+    <string name="title_activity_sales_associate_home">SalesAssociateHome</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="welcome_dept_100">Welcome Dept-100!</string>
+    <string name="product_name">Product Name:</string>
+    <string name="lego_star_wars">Lego Star Wars</string>
+    <string name="price">Price:</string>
+    <string name="_89_99">$89.99</string>
+    <string name="sales_price">Sales Price:</string>
+    <string name="_79_99">$79.99</string>
+    <string name="description">Description:</string>
+    <string name="star_wars_lego_set">Star Wars Lego set</string>
+    <string name="quantity">Quantity:</string>
+    <string name="_15">15</string>
+    <string name="upc_number">UPC Number:</string>
+    <string name="_912505325260">912505325260</string>
+    <string name="sales_date">Sales Date:</string>
+    <string name="_26_12_21">26/12/21</string>
+    <string name="dash">-</string>
+    <string name="_31_12_21">31/12/21</string>
+    <string name="sales">Sales :</string>
+    <string name="black_friday">Black Friday</string>
+    <string name="boxing_day">Boxing Day</string>
+    <string name="sale">Sale</string>
+    <string name="login">Login</string>
+    <string name="enter_password">Enter password</string>
+    <string name="password">Password:</string>
+    <string name="enter_username">Enter username</string>
+    <string name="loginTitle">Login:</string>
+    <string name="easytrack">EasyTrack</string>
+    <string name="back_to_menu">Back to Menu</string>
+    <string name="submit">Submit</string>
+    <string name="search_by_name">Search By Name</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="retailPrice"><strike>$89.99</strike></string>
+    <string name="item_units">%d Units</string>
+    <string name="sales_date_range">%s - %s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

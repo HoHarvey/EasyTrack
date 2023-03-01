@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="width_barcode">588.14dp</dimen>
+    <dimen name="height_barcode">81.2dp</dimen>
+</resources>

@@ -1,0 +1,94 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.tri_devs.easytrack"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+
+    implementation 'com.google.zxing:core:3.4.0'
+
+    // Add the dependencies for the desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
+
+    // Declare the dependency for the Cloud Firestore library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    // view models
+    def lifecycle_version = "2.3.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    // needed so you can use the by viewModels() function
+    def activity_version = "1.2.0"
+    implementation "androidx.activity:activity-ktx:$activity_version"
+
+    implementation 'com.google.android.gms:play-services-mlkit-barcode-scanning:16.1.4'
+
+    // CameraX core library using the camera2 implementation
+    def camerax_version = "1.0.0-rc04"
+    // The following line is optional, as the core library is included indirectly by camera-camera2
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    // If you want to additionally use the CameraX Lifecycle library
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    // If you want to additionally use the CameraX View class
+    implementation "androidx.camera:camera-view:1.0.0-alpha23"
+    // If you want to additionally use the CameraX Extensions library
+    implementation "androidx.camera:camera-extensions:1.0.0-alpha23"
+
+    // coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+
+
+}

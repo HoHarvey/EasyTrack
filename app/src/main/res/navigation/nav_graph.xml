@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.tri_devs.easytrack.LoginFragment"
+        android:label="Welcome!"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_warehouseManagerHomeFragment"
+            app:destination="@id/warehouseManagerHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_salesAssociateHomeFragment"
+            app:destination="@id/salesAssociateHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_departmentManagerHomeFragment"
+            app:destination="@id/departmentManagerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/warehouseManagerHomeFragment"
+        android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerHomeFragment"
+        android:label="Warehouse Manager Home"
+        tools:layout="@layout/fragment_warehouse_manager_home" >
+        <action
+            android:id="@+id/action_logout_warehouse"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_warehouseManagerHomeFragment_to_insertNewProductEntryFragment"
+            app:destination="@id/insertNewProductEntryFragment" />
+        <action
+            android:id="@+id/action_warehouseManagerHomeFragment_to_storeInventoryActivity"
+            app:destination="@id/storeInventoryActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertNewProductEntryFragment"
+        android:name="com.tri_devs.easytrack.barcodegeneration.NewProductEntryFragment"
+        android:label="New Product Entry"
+        tools:layout="@layout/fragment_new_product_entry" >
+        <action
+            android:id="@+id/action_yes"
+            app:destination="@id/warehouseManagerHomeFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/storeInventoryActivity"
+        android:name="com.tri_devs.easytrack.store_inventory.StoreInventoryActivity"
+        android:label="Store Inventory" />
+    <fragment
+        android:id="@+id/salesAssociateHomeFragment"
+        android:name="com.tri_devs.easytrack.barcodescanning.SalesAssociateHomeFragment"
+        android:label="Sales Associate home"
+        tools:layout="@layout/fragment_sales_associate_home" >
+        <action
+            android:id="@+id/action_logout_sales"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_salesAssociateHomeFragment_to_barcodeScanningFragment"
+            app:destination="@id/barcodeScanningFragment" />
+        <action
+            android:id="@+id/action_salesAssociateHomeFragment_to_productInfoSearchFragment"
+            app:destination="@id/productInfoSearchFragment" />
+        <action
+            android:id="@+id/action_salesAssociateHomeFragment_to_storeInventoryActivity"
+            app:destination="@id/storeInventoryActivity" />
+        <action
+            android:id="@+id/action_salesAssociateHomeFragment_to_seachProductNameFragment"
+            app:destination="@id/seachProductNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/barcodeScanningFragment"
+        android:name="com.tri_devs.easytrack.barcodescanning.BarcodeScanningFragment"
+        android:label="Product Barcode Scanner"
+        tools:layout="@layout/fragment_barcode_scanning" >
+        <argument
+            android:name="scan"
+            app:argType="string" />
+        <action
+            android:id="@+id/goToProductInfoSearch"
+            app:destination="@id/productInfoSearchFragment" />
+        <action
+            android:id="@+id/action_barcodeScanningFragment_to_productInformationDetailsFragment"
+            app:destination="@id/productInformationDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productInfoSearchFragment"
+        android:name="com.tri_devs.easytrack.barcodescanning.ProductInfoSearchFragment"
+        android:label="Product Information Scan Results"
+        tools:layout="@layout/fragment_product_info_search" >
+        <argument
+            android:name="ProductInfo"
+            app:argType="com.tri_devs.easytrack.entities.Product" />
+    </fragment>
+    <fragment
+        android:id="@+id/seachProductNameFragment"
+        android:name="com.tri_devs.easytrack.barcodescanning.SearchProductNameFragment"
+        android:label="Product Information Search Results"
+        tools:layout="@layout/fragment_search_product_name" />
+    <fragment
+        android:id="@+id/departmentManagerHomeFragment"
+        android:name="com.tri_devs.easytrack.productInfoUpdate.DepartmentManagerHomeFragment"
+        android:label="Department Manager Home"
+        tools:layout="@layout/fragment_department_manager_home" >
+        <action
+            android:id="@+id/action_logout_department"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_departmentManagerHomeFragment_to_storeInventoryActivity"
+            app:destination="@id/storeInventoryActivity" />
+        <action
+            android:id="@+id/action_departmentManagerHomeFragment_to_barcodeScanningFragment"
+            app:destination="@id/barcodeScanningFragment" />
+        <action
+            android:id="@+id/action_departmentManagerHomeFragment_to_productInformationDetailsFragment"
+            app:destination="@id/productInformationDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productInformationDetailsFragment"
+        android:name="com.tri_devs.easytrack.productInfoUpdate.ProductInformationDetailsFragment"
+        android:label="Product Information Details"
+        tools:layout="@layout/fragment_product_information_details" >
+        <argument
+            android:name="input"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productInformationDetailsFragment_to_departmentManagerHomeFragment"
+            app:destination="@id/departmentManagerHomeFragment" />
+        <argument
+            android:name="upcNumber"
+            app:argType="string" />
+    </fragment>
+</navigation>
